@@ -1,0 +1,31 @@
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body font */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+}

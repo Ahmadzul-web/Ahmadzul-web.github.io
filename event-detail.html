@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFest 2026 - Detail Kegiatan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">🚀 TechFest 2026</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link active" href="events.html">Kegiatan</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Detail -->
+<section class="py-5">
+  <div class="container">
+    <a href="events.html" class="btn btn-outline-primary mb-4">&larr; Kembali ke Daftar Kegiatan</a>
+
+    <!-- Area ini KOSONG, akan diisi otomatis oleh JavaScript di bawah -->
+    <div id="detailContent"></div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+  <div class="container">
+    <p class="mb-0">&copy; 2026 TechFest. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SCRIPT PINTAR: Mengganti isi halaman secara otomatis -->
+<script>
+  // 1. Data semua kegiatan (Database mini)
+  const dataEvent = {
+    ai: {
+      judul: "AI Summit 2026",
+      gambar: "img/AI summit.jpg",
+      badge: "Keynote",
+      badgeColor: "bg-primary",
+      tanggal: "15 November 2026",
+      waktu: "09:00 – 17:00 WIB",
+      lokasi: "Hall A, Jakarta Convention Center",
+      kapasitas: "500 peserta",
+      harga: "Rp 50.000",
+      deskripsi: "AI Summit 2026 adalah acara puncak TechFest yang menghadirkan pembicara kelas dunia dari Google, OpenAI, dan DeepMind. Peserta akan mendapatkan wawasan mendalam tentang tren terbaru Artificial Intelligence, mulai dari Large Language Models (LLM), Computer Vision, hingga AI Ethics.",
+      agenda: [
+        "09:00 – Registrasi & Welcome Coffee",
+        "10:00 – Keynote: 'The Future of AI' oleh Dr. Sarah Chen",
+        "11:30 – Panel Diskusi: AI di Industri Indonesia",
+        "13:00 – Ishoma",
+        "14:00 – Workshop: Building with LLMs",
+        "16:30 – Networking Session"
+      ],
+      pembicara: [
+        { nama: "Dr. Sarah Chen", jabatan: "AI Research Lead, Google", foto: "img/Dr sarah chan.jpg" },
+        { nama: "Prof. Budi Santoso", jabatan: "Dekan Ilmu Komputer, UI", foto: "img/Prof Budi Santoso.jpg" },
+        { nama: "Lisa Tanaka", jabatan: "CTO, StartupX", foto: "img/Lisa tanaka.jpg" }
+      ]
+    },
+    web3: {
+      judul: "Web3 Development",
+      gambar: "img/web3 development.jpg",
+      badge: "Workshop",
+      badgeColor: "bg-success",
+      tanggal: "16 November 2026",
+      waktu: "10:00 – 18:00 WIB",
+      lokasi: "Room B, Jakarta Convention Center",
+      kapasitas: "100 peserta",
+      harga: "Rp 40.000",
+      deskripsi: "Workshop hands-on membangun aplikasi terdesentralisasi (dApps) dengan teknologi blockchain. Peserta akan belajar Solidity, Smart Contract, dan cara deploy aplikasi Web3 secara langsung dengan bimbingan mentor profesional.",
+      agenda: [
+        "10:00 – Pengenalan Blockchain & Web3",
+        "11:00 – Mengenal Smart Contract dengan Solidity",
+        "13:00 – Ishoma",
+        "14:00 – Hands-on: Membuat dApp Pertama",
+        "16:00 – Deploy ke Testnet",
+        "17:30 – Q&A dan Sertifikat"
+      ],
+      pembicara: [
+        { nama: "Raka Aditya", jabatan: "Blockchain Developer", foto: "img/Raka aditya.jpg" },
+        { nama: "Maya Kusuma", jabatan: "Web3 Educator", foto: "img/Maya kusuma.jpg" }
+      ]
+    },
+    iot: {
+      judul: "IoT Innovation Showcase",
+      gambar: "img/Iot.jpg",
+      badge: "Showcase",
+      badgeColor: "bg-warning text-dark",
+      tanggal: "24 September 2026",
+      waktu: "09:30 WIB – Selesai",
+      lokasi: "SLTMNIT WELISARA AUDITORIUM",
+      kapasitas: "1000 pengunjung",
+      deskripsi: "Pameran inovasi Internet of Things dari berbagai startup dan universitas ternama di Indonesia. Lihat langsung prototipe smart home, pertanian pintar, dan kota cerdas masa depan. Terbuka untuk umum!",
+      agenda: [
+        "09:00 – Pembukaan & Gunting Pita",
+        "09:30 – Tur Pameran Dimulai",
+        "11:00 – Demo: Smart Home System",
+        "13:00 – Ishoma",
+        "14:00 – Demo: Smart Farming",
+        "15:30 – Pengumuman Pemenang"
+      ],
+      pembicara: [
+        { nama: "Ir. Hendra Wijaya", jabatan: "CEO, SmartHome ID", foto: "img/Hendra wijaya.jpg" },
+        { nama: "Dr. Ani Rahmawati", jabatan: "Peneliti IoT, ITB", foto: "img/Ani rahmawati.jpg" }
+      ]
+    }
+  };
+
+  // 2. Baca kode rahasia dari URL (contoh: ?event=ai)
+  const urlParams = new URLSearchParams(window.location.search);
+  const kunciEvent = urlParams.get('event');
+  const eventDipilih = dataEvent[kunciEvent];
+  const container = document.getElementById('detailContent');
+
+  // 3. Logika: Jika event tidak ditemukan, tampilkan pesan error
+  if (!eventDipilih) {
+    container.innerHTML = `
+      <div class="text-center py-5">
+        <h3>😕 Kegiatan tidak ditemukan</h3>
+        <p>Silakan pilih kegiatan dari halaman daftar.</p>
+        <a href="events.html" class="btn btn-primary mt-3">Kembali ke Daftar Kegiatan</a>
+      </div>
+    `;
+  } 
+  // 4. Logika: Jika event ditemukan, susun HTML-nya persis seperti desain kamu
+  else {
+    document.title = `TechFest 2026 - ${eventDipilih.judul}`; // Ubah judul tab browser
+
+    // Buat list agenda
+    const listAgenda = eventDipilih.agenda.map(item => `<li class="list-group-item">${item}</li>`).join('');
+    
+    // Buat card pembicara
+    const cardPembicara = eventDipilih.pembicara.map(p => `
+      <div class="col-md-4">
+        <div class="card text-center p-3 h-100">
+          <img src="${p.foto}" class="rounded-circle mx-auto mb-2" style="width:100px; height:100px; object-fit:cover;" alt="${p.nama}">
+          <h6>${p.nama}</h6>
+          <small class="text-muted">${p.jabatan}</small>
+        </div>
+      </div>
+    `).join('');
+
+    // Masukkan semua ke dalam halaman
+    container.innerHTML = `
+      <div class="row g-4">
+        <div class="col-md-6">
+          <img src="${eventDipilih.gambar}" class="img-fluid rounded shadow" alt="${eventDipilih.judul}">
+        </div>
+        <div class="col-md-6">
+          <span class="badge ${eventDipilih.badgeColor} mb-2">${eventDipilih.badge}</span>
+          <h1 class="fw-bold">${eventDipilih.judul}</h1>
+          <ul class="list-unstyled">
+            <li><strong>📅 Tanggal:</strong> ${eventDipilih.tanggal}</li>
+            <li><strong>⏰ Waktu:</strong> ${eventDipilih.waktu}</li>
+            <li><strong>📍 Lokasi:</strong> ${eventDipilih.lokasi}</li>
+            <li><strong>👥 Kapasitas:</strong> ${eventDipilih.kapasitas}</li>
+            <li><strong>💰 Harga:</strong> ${eventDipilih.harga}</li>
+          </ul>
+          <a href="login.html" class="btn btn-success btn-lg mt-3">Daftar Sekarang</a>
+        </div>
+      </div>
+
+      <hr class="my-5">
+
+      <h3 class="fw-bold">Deskripsi Kegiatan</h3>
+      <p>${eventDipilih.deskripsi}</p>
+
+      <h4 class="mt-4">Agenda</h4>
+      <ul class="list-group mb-5">${listAgenda}</ul>
+
+      <h4 class="mt-4">Pembicara</h4>
+      <div class="row g-3">${cardPembicara}</div>
+    `;
+  }
+</script>
+
+</body>
+</html>
