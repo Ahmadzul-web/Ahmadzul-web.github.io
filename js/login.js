@@ -33,7 +33,7 @@ function resetErrors() {
 
 // Event listener submit form
 form.addEventListener('submit', function(e) {
-  e.preventDefault(); // mencegah form diproses secara default
+  e.preventDefault();
   resetErrors();
 
   const email = emailInput.value.trim();
